@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 能让你多活10年的游戏
-category: movies
+category: movie
 ---
 
 p(date). 2012-01-13
