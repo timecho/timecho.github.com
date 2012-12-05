@@ -39,7 +39,7 @@ goagent是优秀的翻墙工具，但由于斯巴达的影响，造成谷歌搜�
 如果出现
  <img src="/image/snova.jpg" />
 证明成功！真不容易啊~~~
-h3 5. 下载、配置 SNOVA C4 客户端
+<h3>5. 下载、配置 SNOVA C4 客户端</h3>
 <img src="/image/snovahome.jpg" />
 32位选：gsnova_0.19.2_windows_386.zip  
 64位选：gsnova_0.19.2_windows_amd64.zip
