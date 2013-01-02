@@ -20,7 +20,7 @@ goagent是优秀的翻墙工具，但由于斯巴达的影响，造成谷歌搜�
 <h3> 4. 部署 SNOVA C4 服务端到 HEROKU</h3>
 
 
-	* 打开命令行难看的黑色界面，输入 cd d:  回车
+	* 打开命令行难看的黑色界面，输入 d:  回车
 	* 输入 heroku login 回车；输入注册heroku时所用的邮箱，回车；输入密码，回车。
 	*  heroku plugins:install https://github.com/heroku/heroku-deploy 回车 --只需执行一次，以后不用执行
 	* heroku apps:create      --此步会创建一个app，格式为abc.herokuapp.com。（更新不用执行此步。）
@@ -34,9 +34,9 @@ goagent是优秀的翻墙工具，但由于斯巴达的影响，造成谷歌搜�
 
 	* 结束
 
-如果bash终端出现no access to this app，就到heroku重命名apps的name
 打开http://abc.herokuapp.com/
 如果出现
+h4 Snova C4 Server 0.19.0
  <img src="/image/snova.jpg" />
 证明成功！真不容易啊~~~
 <h3>5. 下载、配置 SNOVA C4 客户端</h3>
