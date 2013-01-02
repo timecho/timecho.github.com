@@ -1,138 +1,54 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-		<title>时光印迹</title>
-		<link rel="stylesheet" type="text/css" href="/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="/css/syntax.css" />
-		<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/timecho">
-		<script type="text/javascript">
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-1281124-20']);
-		  _gaq.push(['_trackPageview']);
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8">
+<title>{{ page.title }}</title>
+{% if page.description %}
+<meta name="description" content="{{ page.description }}" />
+{% endif %}
+{% if page.keywords %}
+<meta name="keywords" content="{{ page.keywords }}" />
+{% endif %}
+<link rel="stylesheet" href="/static/css/base-common.css" />
+{% if page.styles %}
+{% for style in page.styles %}
+<link rel="stylesheet" href="/static/css/{{ style }}.css" />
+{% endfor %}
+{% endif %}
+<!--[if lt IE 9]>
+<script src="/static/js/html5.js"></script>
+<![endif]-->
+</head>
+ 
+<body>
+<header>
+  <nav class="fn-clear">
+    <a href="/" id="logo" class="fn-left">Table's</a>
+    <a href="/#anchor-article" id="link-article" class="fn-left">Article</a>
+    <a href="/#anchor-project" id="link-project" class="fn-left">Project</a>
+    <a href="https://github.com/taberhuang" class="fn-left">Github</a>
+    <a href="http://www.scoop.it/u/taberh" class="fn-left">Scoop.it</a>
+    <a href="/#anchor-aboutme" id="link-aboutme" class="fn-right">About</a>
+  </nav>
+</header>
 
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-		</script>
-	</head>
+<div id="main">
+{{ content }}
+</div>
 
-	<body>
-		<div id="logo">
-			<span id="tags">生命只有一次，你可能会用它来做些伟大的事情</span>
-			<h1><a href="/">时光印迹</a></h1></div>
-		<div id="wrapper">
-			<div id="content" class="index">
-				<div id="sidebar">
-					<ul>
-						<li>
-							<a href="#">ARTICLES</a>
-							<ul>
-								{% for category in site.categories %}
-								<li><a href="/{{ category[0]  }}.html"> {{ category[0]  }}</a></li>
-								{% endfor %}
-							</ul>
-						</li>
-						<li><a href="/quotes.html">QUOTES</a></li>
-						<li><a href="/projects.html">PROJECTS</a></li>
-						<li><a href="/about.html">ABOUT</a></li>
-						<li><a href="/geek.html">GEEK</a></li>
-						<!---<li><a href="/links.html">LINKS</a></li>--->
-						<li><a href="/contact.html">CONTACT</a></li>
-					</ul>
-				</div>
-				
-				<div id="main">
-				{{ content }}
-				</div>
-
-				<div id="footer">
-					<div id="feed">
-						
-						<div class="badget" id="twt">
-							<a href="http://twitter.com/jsy2046">
-							<span class="service">twitter</span>
-							<span class="info">600+</span>
-							</a>
-						</div>
-						<div class="badget" id="feedburner">
-							<a href="http://feeds.feedburner.com/timecho">
-							<span class="service">rss</span>
-							<span class="info"> </span>
-							</a>
-						</div>
-					</div>
-					<span style="color:#bbb;font-size:12px">make the world a little better and easier</span>
-					<p style="clear:both"></p>
-				</div>
-
-				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<footer>
+  <p>Build by <a href="https://github.com/mojombo/jekyll/wiki" target="_blank">Jekyll</a></p>
+</footer>
 
 <script type="text/javascript">
-	jQuery.cookie = function (key, value, options) {
-    
-    // key and at least value given, set cookie...
-    if (arguments.length > 1 && String(value) !== "[object Object]") {
-        options = jQuery.extend({}, options);
-
-        if (value === null || value === undefined) {
-            options.expires = -1;
-        }
-
-        if (typeof options.expires === 'number') {
-            var days = options.expires, t = options.expires = new Date();
-            t.setDate(t.getDate() + days);
-        }
-        
-        value = String(value);
-        
-        return (document.cookie = [
-            encodeURIComponent(key), '=',
-            options.raw ? value : encodeURIComponent(value),
-            options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
-            options.path ? '; path=' + options.path : '',
-            options.domain ? '; domain=' + options.domain : '',
-            options.secure ? '; secure' : ''
-        ].join(''));
-    }
-
-    // key and possibly options given, get cookie...
-    options = value || {};
-    var result, decode = options.raw ? function (s) { return s; } : decodeURIComponent;
-    return (result = new RegExp('(?:^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? decode(result[1]) : null;
-};
-
-if(!$.cookie('badget-github'))
-{
-	url = 'https://api.github.com/legacy/user/search/timecho';
-	$.getJSON(url+"?callback=?", function(data){
-		//var text = data['users'][0]['public_repo_count'] + ' / ' + data['user']['followers_count'];
-		var text = data['data']['users'][0]['followers_count'];
-		$('#github').find('.info').text(text);
-		$.cookie('badget-github', text, {expires: 7} );
-	});
-}
-else
-{
-	$('#github').find('.info').text($.cookie('badget-github'));
-}
-
-if(!$.cookie('badget-feedburner'))
-{
-	url = 'http://leezhong.com/util/proxy/feedburner.php';
-	$.getJSON(url+"?callback=?", function(data){
-		$('#feedburner').find('.info').text(data['count']);
-		$.cookie('badget-feedburner', data['count'], {expires: 7} );
-	});
-}
-else
-{
-	$('#feedburner').find('.info').text($.cookie('badget-feedburner'));
-}
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-23358884-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
 </script>
-					
-	</body>
+</body> 
 </html>
-
