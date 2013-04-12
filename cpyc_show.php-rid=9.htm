@@ -1,0 +1,308 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>人才招聘</title>
+<style>
+body{margin:0px;background:#030303;}
+ul{list-style:none; border:0; padding:0px; margin:0px;}
+li{list-style:none; float:left; border:0; padding:0px; margin:0px;}
+img{border:0px;  padding:0px; margin:0px;}
+.style1 {	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; COLOR: #000000; BORDER-BOTTOM: #666666 1px solid; FONT-FAMILY: "宋体"; BACKGROUND-COLOR: #ffffff
+}
+td{font-size:12px}
+</style>
+<script src="js/setday-1.js" tppabs="http://hxrszs.cn/js/setday.js"></script>
+<script src="js/function-1.js" tppabs="http://hxrszs.cn/js/function.js"></script>
+<script>
+function istell(str)
+{
+    var result=str.match(/\d{3}-\d{8}|\d{4}-\d{7}/);
+    if(result==null) return false;
+    return true;
+}
+function strDateTime(str) 
+{ 
+var r = str.match(/^(\d{1,4})(-|\/)(\d{1,2})\2(\d{1,2})$/); 
+if(r==null)return false; 
+var d= new Date(r[1], r[3]-1, r[4]); 
+return (d.getFullYear()==r[1]&&(d.getMonth()+1)==r[3]&&d.getDate()==r[4]); 
+} 
+function isemail(str)
+{
+    var result=str.match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/);
+    if(result==null) return false;
+    return true;
+}
+function CheckForm(){
+	if($F("UserName")==""){$("UserName").focus();alert("[中文姓名]不能为空，请输入!");return false;}
+	
+	if($F("Birthday")!==""){
+	  if(!strDateTime($F("Birthday"))){$("Birthday").select();alert("[生日]填写不正确");return false;}
+	}
+	
+	if($F("Weigh")!==""){
+	  if(isNaN($F("Weigh"))){$("Weigh").select();alert("[体重]填写不正确");return false;}
+	}
+	if($F("Height")!==""){
+	  if(isNaN($F("Height"))){$("Height").select();alert("[身高]填写不正确");return false;}
+	}
+	
+	
+	if($F("CartID")==""){
+	                      $("CartID").focus();alert("[身份证号码]不能为空，请输入!");return false;
+	}else{
+		if(isNaN($F("CartID"))){
+			$("CartID").select();alert("[身份证号码]不正确，请重新输入!");return false;
+		}
+	}
+	
+		if($F("email")!==""){
+	  if(!isemail($F("email"))){$("email").select();alert("[电子邮件]填写不正确");return false;}
+	}
+	
+			   if($F('Phone')==""){alert("[联系电话]格式错误!（0771-8831475）");return false;}
+		   else{
+			   	if(!istell($F('Phone'))){$('Phone').select();alert("[联系电话]格式错误!（0771-8831475）");return false;}
+		   }
+			
+			if($F('MovePhone')!==""){
+			   	if(isNaN($F('MovePhone'))){$('MovePhone').select();alert("[手机]格式错误!（13321601019）");return false;}
+		     } 
+
+		
+
+	if($F('ContactPhone')!==""){
+		if(!istell($F('ContactPhone'))){$('ContactPhone').select();alert("[联系电话]格式错误!（0771-8831475）");return false;}	
+	}
+			   
+	if($F("OldAddress")==""){$("OldAddress").focus();alert("[户口所在地]不能为空，请输入!");return false;}	
+	if($F("NowAddress")==""){$("NowAddress").focus();alert("[目前居住地]不能为空，请输入!");return false;}	
+	if($F("HighBook")==0){$("HighBook").focus();alert("请选择最高学历!");return false;}	
+	if($F("HightSchool")==""){$("HightSchool").focus();alert("[毕业院校]不能为空!");return false;}	
+	if($F("Subject")==""){$("Subject").focus();alert("[所学专业]不能为空，请输入!");return false;}	
+	if($F("Features")==""){$("Features").focus();alert("[有何特长]不能为空，请输入!");return false;}	
+	if($F("ReportTime")==""){$("ReportTime").focus();alert("[赴职时间]不能为空，请输入!");return false;}	
+	if($F("Request")==""){$("Request").focus();alert("[待遇要求]不能为空，请输入!");return false;}	
+	if($F("JobInfo")==""){$("JobInfo").focus();alert("[工作简介]不能为空，请输入!");return false;}	
+	
+	return;		
+}
+</script>
+</head>
+
+<body>
+<form name="form" id="form" action="http://hxrszs.cn/cpyc_do.php" method="post" onSubmit="return CheckForm()">
+<table id="table1" cellspacing="1" cellpadding="2" width="777" align="center" 
+      bgcolor="#cccccc" border="0">
+  <tbody>
+    <tr bgcolor="#f1f1f1">
+      <td align="left" bgcolor="#ffffff" colspan="2" height="22"><font 
+            color="#ff6633">个人基本资料</font></td>
+      </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" width="162" bgcolor="#ffffff" height="19">应聘职位：</td>
+      <td align="left" bgcolor="#ffffff">市场部业务员</td>
+      </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" width="162" bgcolor="#ffffff" height="19">中文姓名：</td>
+      <td align="left" bgcolor="#ffffff"><input class="style1" id="UserName" 
+            size="15" name="UserName" />
+          <font color="#ff0000">*</font> </td>
+      </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">性别：</td>
+      <td height="22" align="left" bgcolor="#ffffff"><input type="radio" checked="checked" 
+            value="男" name="Sex" />
+        男
+        <input type="radio" value="女" name="Sex" />
+      女 <font 
+            color="#ff0000">*</font> </td>
+      </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">出生日期：</td>
+      <td align="left" bgcolor="#ffffff">
+      <input name="Birthday" type="text"  id="Birthday"  size="15"   >
+          <font color="#ff0000">格式如</font>：2004-2-12</td>
+      </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="22">婚姻：</td>
+      <td align="left" bgcolor="#ffffff"><select name="Marrige" id="Marrige">
+        <option 
+              value="未婚" selected="selected">未婚</option>
+        <option value="已婚">已婚</option>
+      </select>
+        &nbsp;&nbsp;&nbsp; 健康状况 ：
+        <select id="Healthy" name="Healthy">
+          <option 
+              value="" selected="selected">请选择</option>
+          <option value="健康">健康</option>
+          <option value="良好">良好</option>
+      </select></td>
+      </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">体重：</td>
+      <td align="left" bgcolor="#ffffff"><input class="style1" id="Weigh" size="5" 
+            name="Weigh" />
+        公斤&nbsp;&nbsp;&nbsp;&nbsp; 身高(cm)：
+        <input class="style1" 
+            id="Height" size="5" name="Height" />
+      cm</td>
+      </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">政治面貌：</td>
+      <td align="left" bgcolor="#ffffff"><select name="PolitiType" id="PolitiType">
+        <option value="0" 
+              >请选择</option>
+        <option value="党员">党员</option>
+        <option 
+              value="共青团员">共青团员</option>
+        <option value="群众">群众</option>
+      </select></td>
+      </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">身份证：</td>
+      <td width="604" align="left" bgcolor="#ffffff"><input class="style1" 
+            id="CartID" name="CartID" />
+          <font color="#ff0000">*</font>驾照：
+        <input 
+            class="style1" id="DriverCart" size="8" name="DriverCart" />
+        &nbsp;&nbsp;</td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="left" bgcolor="#ffffff" colspan="2" height="22"><font 
+            color="#ff6633">个人联系方式</font></td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">电子邮箱：</td>
+      <td width="604" align="left" bgcolor="#ffffff"><input class="style1" id="pho_1" 
+            name="Email" />      </td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">联系电话：</td>
+      <td width="604" height="19" align="left" bgcolor="#ffffff"><input 
+            class="style1" id="Phone" size="15" name="Phone" />
+          <font color="#ff0000">*</font> 手机：
+      <input class="style1" id="MovePhone" size="15" name="MovePhone" /></td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">户口所在地：</td>
+      <td width="604" align="left" bgcolor="#ffffff"><input class="style1" 
+            id="OldAddress" size="30" name="OldAddress" />
+          <font color="#ff0000">*</font> </td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">目前住址：</td>
+      <td width="604" height="19" align="left" bgcolor="#ffffff"><input 
+            class="style1" id="NowAddress" size="30" name="NowAddress" />
+          <font 
+            color="#ff0000">*</font> </td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="left" bgcolor="#ffffff" colspan="2" height="22"><font 
+            color="#ff6633">个人学历及工作简历</font></td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">最高学历：</td>
+      <td width="604" height="19" align="left" bgcolor="#ffffff"><select id="HighBook" 
+            name="HighBook">
+        <option value=0 >请选择</option>
+        <option 
+              value="初中">初中</option>
+        <option value="高中">高中</option>
+        <option 
+              value="中专">中专</option>
+        <option value="大专">大专</option>
+        <option 
+              value="本科">本科</option>
+        <option value="研究生">研究生</option>
+        <option 
+              value="硕士">硕士</option>
+        <option value="博士">博士</option>
+        <option 
+              value="博士后">博士后</option>
+      </select>
+        <font color="#ff0000">*</font> 毕业院校：
+        <input class="style1" id="HightSchool" name="HightSchool" />
+          <font 
+            color="#ff0000">*</font></td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">毕业日期：</td>
+      <td width="604" align="left" bgcolor="#ffffff"><input name="GraduateDay" type="text"
+           id="GraduateDay" style="cursor:hand" onclick='setday(this)' size="15" readonly='yes' runat='server' /></td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">所学专业：</td>
+      <td width="604" align="left" bgcolor="#ffffff"><input class="style1" id="Subject" 
+            size="15" name="Subject" />
+          <font color="#ff0000">*</font> 电脑水平：
+        <input 
+            class="style1" id="Computerlevel" size="15" name="Computerlevel" />      </td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">外语语种：</td>
+      <td width="604" align="left" bgcolor="#ffffff"><input class="style1" 
+            id="Language" size="15" name="Language" />
+        外语水平：
+        <input class="style1" 
+            id="languagelevel" size="15" name="languagelevel" />      </td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">有何才艺特长：</td>
+      <td width="604" height="19" align="left" bgcolor="#ffffff"><input 
+            class="style1" id="Features" size="53" name="Features" />
+          <font 
+        color="#ff0000">*</font></td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">工作年限：</td>
+      <td width="604" height="19" align="left" bgcolor="#ffffff"><input 
+            class="style1" id="WorkYear" size="6" name="WorkYear" />
+        年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;原工作单位：
+        <input 
+            class="style1" id="Old_jobpart" size="25" name="Old_jobpart" />      </td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">联系地址：</td>
+      <td width="604" height="19" align="left" bgcolor="#ffffff"><input name="ContactAddress" 
+            class="style1" id="jobaddress13" size="25" />
+        联系电话：
+      <input 
+            class="style1" id="ContactPhone" size="15" name="ContactPhone" /></td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">赴职时间： </td>
+      <td align="left" width="604" bgcolor="#ffffff" height="19"><div align="left">
+        <input class="style1" id="ReportTime" size="15" name="ReportTime" />
+        <font color="#ff0000">*</font>待遇要求：
+        <input class="style1" id="Request" 
+            name="Request" />
+        <font color="#ff0000">*</font></div></td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">其他要求：</td>
+      <td width="604" align="left" bgcolor="#ffffff"><textarea class="style1" id="OthersRequest" name="OthersRequest" rows="4" cols="55"></textarea>      </td>
+    </tr>
+    <tr bgcolor="#f1f1f1">
+      <td align="right" width="162" bgcolor="#ffffff">工作简介：</td>
+      <td width="604" align="left" bgcolor="#ffffff"><textarea class="style1" id="JobInfo" name="JobInfo" rows="10" cols="55"></textarea>
+          <font color="#ff0000">*</font> </td>
+    </tr>
+	<tr bgcolor="#f1f1f1">
+      <td align="right" bgcolor="#ffffff" height="19">验证码：</td>
+      <td width="604" height="19" align="left" bgcolor="#ffffff">&nbsp;<input name='validatecode' type='text' size='5' class="input"/>&nbsp;&nbsp;<img src="Inc/authcode.inc.php.png" tppabs="http://hxrszs.cn/Inc/authcode.inc.php" align='absmiddle' border='0'></td>
+	</tr>
+    <tr align="middle" bgcolor="#f1f1f1">
+      <td bgcolor="#ffffff" colspan="2" height="22" align="center"><input type="submit" value="提交" name="submit" />
+        &nbsp;
+        <input name="reset" type="reset" value="重设" />
+        &nbsp;&nbsp;
+        <input name="jobname" type="hidden" id="jobname" value="市场部业务员" />        </td>
+    </tr>
+  </tbody>
+</table>
+</form>
+</body>
+</html>

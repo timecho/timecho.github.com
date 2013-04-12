@@ -1,0 +1,20 @@
+/* CSS Document */
+.QQbox {Z-INDEX:1000; RIGHT: 0px; WIDTH: 110px; POSITION: absolute; TOP: 320px}
+.QQbox .press {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; RIGHT: 0px; BORDER-LEFT: medium none; WIDTH: 110px; CURSOR: pointer; BORDER-BOTTOM: medium none; POSITION: absolute;}
+.QQbox .Qlist {	BACKGROUND: url("images/qq_listbg.gif"/*tpa=http://hxrszs.cn/images/qq_listbg.gif*/) repeat-y -155px 0px; LEFT: 0px; WIDTH: 110px; POSITION: absolute}
+.QQbox .Qlist .t {FONT-SIZE: 1px; FLOAT: right; WIDTH: 145px; HEIGHT: 6px}
+.QQbox .Qlist .b {FONT-SIZE: 1px; FLOAT: right; WIDTH: 145px; HEIGHT: 6px}
+.QQbox .Qlist .t {BACKGROUND: url("images/qq_listbg.gif"/*tpa=http://hxrszs.cn/images/qq_listbg.gif*/) no-repeat left 50%}
+.QQbox .Qlist .b {BACKGROUND: url("images/qq_listbg.gif"/*tpa=http://hxrszs.cn/images/qq_listbg.gif*/) no-repeat right 50%}
+.QQbox .Qlist .con {BACKGROUND: #fff; MARGIN: 0px auto; WIDTH: 90%}
+.QQbox .Qlist .con H2 {
+	BORDER-RIGHT: #3a708d 1px solid; BORDER-TOP: #3a708d 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND: url("images/qq_listbg.gif"/*tpa=http://hxrszs.cn/images/qq_listbg.gif*/) repeat-y -163px 0px; BORDER-LEFT: #3a708d 1px solid; COLOR: #fff; LINE-HEIGHT: 22px; BORDER-BOTTOM: #3a708d 1px solid; FONT-STYLE: normal; HEIGHT: 22px; TEXT-ALIGN: center; FONT-VARIANT: normal
+}
+
+.QQbox .Qlist .con UL LI {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 8px; BACKGROUND: #e8e8e8; PADDING-BOTTOM: 0px; PADDING-TOP: 2px; HEIGHT: 20px
+}
+.QQbox .Qlist .con UL LI.odd { BACKGROUND: #fff }
+.f12white {	FONT-SIZE: 12px; COLOR: #ffffff }
+.f12blueB {	FONT-FAMILY: Georgia, "Times New Roman", Times, serif; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #006da2 }
