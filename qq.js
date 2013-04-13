@@ -12,7 +12,7 @@ document.writeln("<div style=\"width:110px;height:200px; overflow:hidden;\" id=\
 document.writeln("<div style=\"width:107px;height:200px;\">");
 
 
-document.writeln("<a target=\"_blank\" href=\"http:\/\/wpa.qq.com\/msgrd?v=3&uin=1908118876&site=qq&menu=yes\"><img border=\"0\" src=\"Images\/onl.gif\" alt=\"客户服务QQ\" title=\"客户服务QQ\" width=\"74\" height=\"77\"><\/a>");
+document.writeln("<a target=\"_blank\" href=\"http:\/\/wpa.qq.com\/msgrd?v=3&uin=43168168&site=qq&menu=yes\"><img border=\"0\" src=\"Images\/onl.gif\" alt=\"客户服务QQ\" title=\"客户服务QQ\" width=\"74\" height=\"77\"><\/a>");
 
 
 document.writeln("<\/div>")
