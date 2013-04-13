@@ -1,7 +1,7 @@
 document.writeln("<div class='QQbox' id='divQQbox' >");
 document.writeln("<div class='Qlist' id='divOnline' onmouseout='hideMsgBox(event);' style='display : none;'>");
 document.writeln("<table width=\"110\" border=\"0\" cellspacing=\"1\" cellpadding=\"2\" bgcolor=\"#75B7FA\">");
-document.writeln("<tr><td align=\"center\" class=\"f12white\" bgcolor=\"#004080\">¿Í»§·þÎñ QQ</td></tr>");
+document.writeln("<tr><td align=\"center\" class=\"f12white\" bgcolor=\"#004080\">ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ QQ</td></tr>");
 document.writeln("<tr>");
 document.writeln("<td></td>");
 document.writeln("</tr>");
@@ -12,7 +12,7 @@ document.writeln("<div style=\"width:110px;height:200px; overflow:hidden;\" id=\
 document.writeln("<div style=\"width:107px;height:200px;\">");
 
 
-document.writeln("<a target=\"_blank\" href=\"http:\/\/wpa.qq.com\/msgrd?v=3&uin=43168168&site=qq&menu=yes\"><img border=\"0\" src=\"Images\/onl.gif\" alt=\"¿Í»§·þÎñQQ\" title=\"¿Í»§·þÎñQQ\" width=\"74\" height=\"77\"><\/a>");
+document.writeln("<a target=\"_blank\" href=\"http:\/\/wpa.qq.com\/msgrd?v=3&uin=43168168&site=qq&menu=yes\"><img border=\"0\" src=\"images\/onl.gif\" alt=\"ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½QQ\" title=\"ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½QQ\" width=\"74\" height=\"77\"><\/a>");
 
 
 document.writeln("<\/div>")
